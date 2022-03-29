@@ -18,6 +18,13 @@ defmodule CdGigalixirWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    live "/name", CategoryLive.Index, :index
+    live "/name/new", CategoryLive.Index, :new
+    live "/name/:id/edit", CategoryLive.Index, :edit
+
+    live "/name/:id", CategoryLive.Show, :show
+    live "/name/:id/show/edit", CategoryLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
